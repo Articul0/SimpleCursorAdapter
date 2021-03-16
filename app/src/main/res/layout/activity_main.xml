@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/goods_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Наименование товара"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Цена"
+        app:layout_constraintTop_toBottomOf="@+id/goods_name"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Spinner
+        android:id="@+id/categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/categories"
+        android:scrollbarSize="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/price"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/addGood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Добавить товар"
+        app:layout_constraintTop_toBottomOf="@+id/categories"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ListView
+        android:id="@+id/goodslist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/goodsCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sortByName" />
+
+    <TextView
+        android:id="@+id/goodsCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/totalPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sortByPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="по цене"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addGood" />
+
+    <Button
+        android:id="@+id/sortByName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="по названию"
+        app:layout_constraintEnd_toStartOf="@+id/sortByType"
+        app:layout_constraintStart_toEndOf="@+id/sortByPrice"
+        app:layout_constraintTop_toBottomOf="@+id/addGood" />
+
+    <Button
+        android:id="@+id/sortByType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="по типу"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addGood" />
+</androidx.constraintlayout.widget.ConstraintLayout>

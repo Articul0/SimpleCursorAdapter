@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AdapterExample</string>
+    <string-array name="categories" >
+        <item>продукты</item>
+        <item>хоз. товар</item>
+        <item>электроника</item>
+    </string-array>
+
+</resources>
